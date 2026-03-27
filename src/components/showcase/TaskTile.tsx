@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { DOMAIN_COLOURS } from "@/lib/domain-colours";
 import type { TaskConfig } from "@/lib/task-config";
+import { PREVIEW_COMPONENTS } from "./Previews";
 
 interface TaskTileProps {
   task: TaskConfig;
@@ -13,6 +14,7 @@ interface TaskTileProps {
 
 export default function TaskTile({ task, index, isFiltered, onClick }: TaskTileProps) {
   const domainColour = DOMAIN_COLOURS[task.domain];
+  const PreviewComponent = PREVIEW_COMPONENTS[task.slug];
 
   return (
     <motion.div
@@ -44,14 +46,10 @@ export default function TaskTile({ task, index, isFiltered, onClick }: TaskTileP
       }}
     >
       {/* Preview area */}
-      <div className="aspect-[4/3] sm:aspect-[4/3] bg-background/50 flex items-center justify-center relative overflow-hidden">
-        <TaskPreviewPlaceholder task={task} />
+      <div className="aspect-[4/3] sm:aspect-[4/3] bg-background/50 flex items-center justify-center relative overflow-hidden pointer-events-none">
+        {PreviewComponent && <PreviewComponent />}
         {/* Play overlay on hover */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileHover={{ opacity: 1 }}
-          className="absolute inset-0 flex items-center justify-center bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"
-        >
+        <div className="absolute inset-0 flex items-center justify-center bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity">
           <div
             className="w-12 h-12 rounded-full flex items-center justify-center"
             style={{ backgroundColor: `${domainColour}20` }}
@@ -65,7 +63,7 @@ export default function TaskTile({ task, index, isFiltered, onClick }: TaskTileP
               <polygon points="6,3 18,10 6,17" />
             </svg>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Info area */}
@@ -83,22 +81,5 @@ export default function TaskTile({ task, index, isFiltered, onClick }: TaskTileP
         </span>
       </div>
     </motion.div>
-  );
-}
-
-function TaskPreviewPlaceholder({ task }: { task: TaskConfig }) {
-  const colour = DOMAIN_COLOURS[task.domain];
-  return (
-    <div className="flex flex-col items-center justify-center gap-2 p-4">
-      <div
-        className="w-16 h-16 rounded-full flex items-center justify-center opacity-30"
-        style={{ backgroundColor: colour }}
-      >
-        <span className="font-display text-white text-lg font-semibold">
-          {task.title.charAt(0)}
-        </span>
-      </div>
-      <span className="font-body text-xs text-text-secondary">{task.domain}</span>
-    </div>
   );
 }
