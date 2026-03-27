@@ -10,8 +10,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>USYD Meta Lab — Experiment Showcase</title>
-        <meta name="description" content="Interactive cognitive psychology experiment demos from the USYD Meta Lab" />
+        <title>USYD Meta Lab — Research Demonstrations</title>
+        <meta name="description" content="Interactive cognitive psychology research demonstrations from the USYD Meta Lab" />
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"

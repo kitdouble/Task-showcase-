@@ -105,7 +105,7 @@ export default function InstructionScreen({
           onClick={onBack}
           className="w-full mt-3 py-2 font-body text-sm text-text-secondary hover:text-text-primary transition-colors"
         >
-          &larr; Return to Showcase
+          &larr; Return to Demonstrations
         </motion.button>
       </motion.div>
     </div>

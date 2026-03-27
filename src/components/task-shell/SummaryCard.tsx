@@ -75,7 +75,7 @@ export default function SummaryCard({ task, onReturn }: SummaryCardProps) {
           className="w-full py-3 rounded-lg font-display text-lg font-semibold text-white transition-opacity hover:opacity-90"
           style={{ backgroundColor: "#C9A84C" }}
         >
-          Return to Showcase
+          Return to Demonstrations
         </button>
       </motion.div>
     </motion.div>

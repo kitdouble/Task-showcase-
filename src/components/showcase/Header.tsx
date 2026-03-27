@@ -20,11 +20,11 @@ export default function Header() {
             <img
               src="https://usyd-meta-lab.github.io/images/logo.PNG"
               alt="USYD Meta Lab"
-              className="h-7"
+              className="h-10"
             />
           </a>
-          <h1 className="font-display text-xl font-semibold text-text-primary">
-            Experiment Showcase
+          <h1 className="font-display text-2xl font-semibold text-text-primary tracking-wide">
+            Research Demonstrations
           </h1>
           <button
             onClick={() => setAboutOpen(true)}

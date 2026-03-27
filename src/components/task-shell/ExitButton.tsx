@@ -14,7 +14,7 @@ export default function ExitButton({ onClick }: ExitButtonProps) {
       onClick={onClick}
       className="fixed top-4 right-4 z-40 px-4 py-2 rounded-full bg-surface/80 backdrop-blur-sm border border-border font-body text-xs font-medium text-text-secondary hover:text-text-primary transition-colors shadow-sm"
     >
-      &larr; Showcase
+      &larr; Back
     </motion.button>
   );
 }
